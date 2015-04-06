@@ -1,0 +1,12 @@
+.DS_Store
+
+# IDE settings
+.idea
+
+# Vagrant
+.vagrant
+Vagrantfile
+
+# Vendor
+/vendor
+
