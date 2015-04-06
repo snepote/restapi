@@ -20,7 +20,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  # - sh test/phpunit.sh
+  - sh test/phpunit.sh
   - sh test/behat.sh -p ci
 after_script:
   - sh test/coveralls.sh

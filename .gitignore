@@ -2,6 +2,7 @@
 
 # Reports
 /test/reports
+/build
 
 # IDE settings
 .idea
