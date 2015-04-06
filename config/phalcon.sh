@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt-add-repository ppa:phalcon/stable -y -f
+sudo apt-add-repository ppa:phalcon/stable
 sudo apt-get update -y -f
 sudo apt-get install python-software-properties -y -f
 sudo apt-get install php5-phalcon -y -f
