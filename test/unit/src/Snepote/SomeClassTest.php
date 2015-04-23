@@ -26,7 +26,7 @@ class SomeClassTest extends PHPUnit_Framework_TestCase
      */
     public function testSaySomething()
     {
-        $this->assertEquals('what', $this->someClass->saySomething('what'));
+        $this->assertEquals('what2', $this->someClass->saySomething('what2'));
     }
 
     /**
