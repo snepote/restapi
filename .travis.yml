@@ -11,9 +11,8 @@ before_script:
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
-  - cd public
-  - sudo sed -i "s#LOCAL_DIR#${localdir}#" /etc/nginx/sites-available/default
-  - cd ..
+  - LOCALDIR="$(pwd)/public"
+  - sudo sed -i "s#LOCAL_DIR#${LOCALDIR}#" /etc/nginx/sites-available/default
   - sudo service nginx restart
   # php5 fpm
   - cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
