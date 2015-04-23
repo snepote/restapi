@@ -3,10 +3,7 @@ php:
   - "5.5"
 
 install:
-   - wget http://getcomposer.org/composer.phar
-   - sudo chown root.root composer.phar
-   - sudo mv composer.phar /usr/bin/composer
-   - sudo chmod +x /usr/bin/composer
+   - composer selfupdate
    - composer --profile --prefer-source --no-interaction install
 
 # Acceptance tests
