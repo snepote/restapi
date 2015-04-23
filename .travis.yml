@@ -13,7 +13,8 @@ before_script:
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo mkdir /var/www/
   - sudo ln -s  $(pwd) /var/www/restapi
-  - HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+  - sudo cat /etc/passwd
+  - sudo cat /etc/group
   - sudo chown -R travis.travis /var/www/
   - ls -la /var/www/
   - sudo service nginx restart
