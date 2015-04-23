@@ -6,6 +6,7 @@ install:
    - wget http://getcomposer.org/composer.phar
    - sudo chown root.root composer.phar
    - sudo mv composer.phar /usr/bin/composer
+   - sudo chmod +x /usr/bin/composer
    - composer --profile --prefer-source --no-interaction install
 
 # Acceptance tests
@@ -13,6 +14,8 @@ before_script:
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
+  - sudo mkdir /var/www/
+  - sudo ln -s  $(pwd) /var/www/restapi
   - sudo service nginx restart
   # php5 fpm
   - cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
