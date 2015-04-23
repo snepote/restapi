@@ -16,3 +16,6 @@ Vagrantfile
 
 # Composer
 composer.phar
+
+# Travis
+*travis.log
