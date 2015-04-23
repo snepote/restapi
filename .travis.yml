@@ -12,7 +12,8 @@ before_script:
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo touch /var/run/php5-fpm.sock
-  - sudo chown travis.www-data /var/run/php5-fpm.sock
+  - sudo chown www-data.www-data /var/run/php5-fpm.sock
+  - sudo chmod 0660 /var/run/php5-fpm.sock
   - LOCALDIR="$(pwd)/public"
   - sudo sed -i "s#LOCAL_DIR#${LOCALDIR}#" /etc/nginx/sites-available/default
   - sudo service nginx restart
