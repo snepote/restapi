@@ -1,7 +1,8 @@
 server {
     listen 80;
     server_name localhost;
-    root /home/travis/build/snepote/restapi/public;
+    root LOCAL_DIR;
+
 
     index  index.php;
 
@@ -13,12 +14,12 @@ server {
     location ~* ^.+\.(wsf|xml|pdf|doc|jpg|jpeg|gif|css|png|js|ico|ttf|eot|otf|svg)$ {
         expires 15d;
     }
-
+    
     location ~ \.php($|/) {
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index index.php;
         include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
     }
 
     gzip on;
