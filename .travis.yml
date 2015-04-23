@@ -10,6 +10,7 @@ install:
 before_script:
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
+  - sudo cat /etc/nginx/sites-available/default
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo mkdir /var/www/
   - sudo ln -s  $(pwd) /var/www/restapi
