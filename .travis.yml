@@ -15,7 +15,7 @@ before_script:
   - sudo ln -s  $(pwd) /var/www/restapi
   - sudo cat /etc/passwd
   - sudo cat /etc/group
-  - sudo chown -R travis.travis /var/www/
+  - sudo chown -R travis.www-data /var/www/
   - ls -la /var/www/
   - sudo service nginx restart
   # php5 fpm
