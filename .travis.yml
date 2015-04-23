@@ -3,7 +3,8 @@ php:
   - "5.5"
 
 install:
-   - [ -f composer.phar ] && composer.phar selfupdate || curl -sS https://getcomposer.org/installer | php
+   - wget http://getcomposer.org/composer.phar
+   - php composer.phar install
    - composer --profile --prefer-source --no-interaction install
 
 # Acceptance tests
