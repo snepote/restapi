@@ -15,7 +15,7 @@ before_script:
   - sudo ln -s  $(pwd) /var/www/restapi
   - HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
   - sudo chown -R .$HTTPDUSER /var/www/
-  - echo $HTTPDUSER
+  - whoami
   - ls -la /var/www/
   - sudo service nginx restart
   # php5 fpm
