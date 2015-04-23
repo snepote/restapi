@@ -3,7 +3,8 @@ php:
   - "5.5"
 
 install:
-   - composer selfupdate
+   - wget http://getcomposer.org/composer.phar
+   - php composer.phar install
    - composer --profile --prefer-source --no-interaction install
 
 # Acceptance tests
