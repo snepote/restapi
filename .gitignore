@@ -14,3 +14,5 @@ Vagrantfile
 # Vendor
 /vendor
 
+# Composer
+composer.phar
