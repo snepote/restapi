@@ -3,7 +3,6 @@ server {
     server_name localhost;
     root LOCAL_DIR;
 
-
     index  index.php;
 
     location / {
