@@ -11,6 +11,8 @@ before_script:
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
+  - LOCALDIR="$(pwd)/public"
+  - sudo sed -i "s#LOCAL_DIR#${LOCALDIR}#" /etc/nginx/sites-available/default
   - sudo service nginx restart
   # php5 fpm
   - cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
@@ -26,4 +28,4 @@ after_script:
   - sh test/coveralls.sh
 
 notifications:
-  email: "snepote@gmail.com"
+  email: "master.zion@gmail.com"
