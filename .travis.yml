@@ -28,4 +28,4 @@ after_script:
   - sh test/coveralls.sh
 
 notifications:
-  email: "snepote@gmail.com"
+  email: "master.zion@gmail.com"
